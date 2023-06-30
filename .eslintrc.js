@@ -1,8 +1,7 @@
 module.exports = {
   root: true,
-  env: {
-    node: true,
-  },
+  env: { node: true },
+  globals: { _: "readonly" },
   extends: [
     "plugin:vue/essential",
     "eslint:recommended",
