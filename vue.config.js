@@ -1,9 +1,12 @@
 const { defineConfig } = require("@vue/cli-service");
 const CopyPlugin = require("copy-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = defineConfig({
   transpileDependencies: true,
   chainWebpack: (config) => {
+    config.plugin(ProvidePlugin).use(webpack.ProvidePlugin, [{_: "lodash" }])
+    
     config.plugin("CopyPlugin").use(CopyPlugin, [
       {
         patterns: [
